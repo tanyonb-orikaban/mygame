@@ -63,22 +63,35 @@ import os
 # Player Class, it can either contain the variable for a health system or health
 # variable. Should have a gear and initial loadout method, as well as a function
 # for equipping.
-
-class Player(self, **kwargs): # I think
+class Player(self, **kwargs): # kwargs is a placeholder for now
     """It's you."""
 
+    # constructor for you
     def __init__(self, name, race, class):
+        pass
 
-
+    # this will be for the starting atttributes
+    def initattr():
+        pass
 
 
 # Monster Class, can roll for species upon generation? Each species would have
 # it's own attributes (attr)
+class Monster(self, **kwargs):
+    pass
+
+
+# think this is where i will store a local dictionary.
+class Room(self, where, dic):
+    localdic = {}
+    pass
+
 
 # NPC Class, perhaps could incorporate disposition but that's a lot of coding.
 # Boy I'm already getting ambitious. Could be a rewarding side project however
 # and a good showcase of my potential work.
-
+class NPC(self, where):
+    pass
 
 
 # Wherever you start, I want it to be revisited at some point, maybe a fountain
@@ -100,4 +113,66 @@ class Player(self, **kwargs): # I think
 # COMBAT SYSTEM
 # using loops i would use a tick system. so buffs etc will reduce the number
 # to reach in order to perform an action in combat (damage).
-# for example, Player reaches an action at 1.5(ticks). Vagabond
+# for example, Player reaches an action at 1.5(ticks). Vagabond reaches their
+# action potential in 0.8(ticks). When in combat they will both tick up in
+# increments of 0.1 until one of the characters reaches an action potential.
+# this happens behind the scenes, there is no wait time. this is just a method
+# of organization.
+
+
+# SPEECH SYSTEM
+# although combat is very much a part of the game, non-violence should be rewarded
+# incorporated.
+# layered speech system 'look' -> "at what?" -> 'tree' ->
+# "there aren't any trees around...". "else?" -> 'move to door' -> -enters new area-
+
+def detectinput(input):
+    # this will be the speech function, could be a mistake to have so many
+    # nested functions.
+
+    # function for looking around, compares against a local dictionary stored
+    # in the room object
+    def look(what):
+        if what in localdic:
+            print(localdic[what])
+            pass
+        else:
+            print(f"{what} doesn't seem to be around.")
+            pass
+
+
+    # shouldn't need any inputs for it to work
+    def inventory():
+        pass
+
+
+    # for using things and pushing buttons etv
+    def use(object):
+        # checks if item is usable and then activates it
+        pass
+
+
+    def attack(with=equippedwep, what):
+        # takes a weapon
+
+
+
+    # creating a dictionary for recognized words
+    # will i have to define functions for each of these or is there an easier solution
+    workingwords = {"look":look(),
+                    "inventory":inventory(),
+                    "use":
+                    "attack":
+                    "help":
+                    "stats":
+                    "move":
+                    "what":
+
+
+
+    if input.isalnum():
+        words = input.split(' ')
+        recwords = [words for words in workingwords]
+    else:
+        print(f"{input} is not recognized.")
+        pass

@@ -13,7 +13,7 @@ and as soon as I have a general idea starting on that is not a bad idea.
 
 I'm using markdown, here's the run-down:
 - #### indicates heading for a room or instance
-- *()* italicized is an action, something to implement.
+- \*()* italicized is an action, something to implement.
 - [] is just like () in english strings for thoughts.
 
 
@@ -22,15 +22,27 @@ An intro to the game with a start function and a command list that's basic?
 I want the player to be able to interact with the environment zork-style,
 research zork?
 
-*(list commands)*
-*(start game)* -
+*(list commands)* - Should I have a commands list default displayed when action
+is insisted? Could look like:
+
+        `|| LOOK || USE || FIGHT || MOVE || INVENTORY || STATS || HELP ||`
+
+
+*(start game)* - `start()`
 *(initialize character)* - Starting with a character of your choice could be
-interesting, attributes would change based on race.
+interesting, attributes would change based on race. Currently defining `name`,
+`race`, and `class` upon init.
 
 #### DARK ROOM
 Starting in a dark room [underground?] you *(fumble around)* to find a ladder.
-Don't know how you got here, *(what's your name)*?
-*(Climb the ladder)*.
+Don't know how you got here, *(what's your name)*? --> conflicts with init
+of Player, could have separate functions for definition.
+*(Climb the ladder)*=]
+
+`if light_source in inventory:`  # define light_source and inventory
+    `room_state = illuminated`  # room_state and illuminated must be defined
+    `return room_state`  
+
 
 #### COURTYARD
 On the surface you see a courtyard with a fountain and 4 doors, you are
